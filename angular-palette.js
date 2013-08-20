@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('palette', ['ngSanitize'])
+angular.module('palette', [])
   .factory('paletteService', [function (){
 
     var oldCommands = [];

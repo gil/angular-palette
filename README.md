@@ -157,7 +157,6 @@ in the palette like Sublime Text does.
 ### Dependencies
 
  - MouseTrap [https://github.com/ccampbell/mousetrap](https://github.com/ccampbell/mousetrap)
- - NgSanitize
 
 ### Contributing
 
