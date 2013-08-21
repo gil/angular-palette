@@ -164,10 +164,35 @@ angular.module('palette', [])
 
         function removeOldCommands (oldCommands) {
           $scope.commands.splice(-oldCommands.length, oldCommands.length);
+          unbindShortcuts(oldCommands);
         }
 
         function addNewCommands (newCommands) {
           $scope.commands.push.apply($scope.commands, newCommands);
+          bindShortcuts(newCommands);
+        }
+
+        function bindShortcuts(commands) {
+          for(var i = 0; i < commands.length; i++) {
+            if(typeof commands[i].shortcut !== 'undefined') {
+              commands[i].shortcut = [].concat(commands[i].shortcut);
+              Mousetrap.bind(commands[i].shortcut, shortcutBindHandler(commands[i]));
+            }
+          }
+        }
+
+        function shortcutBindHandler(command) {
+          return function() {
+            $scope.useSelection(command);
+          };
+        }
+
+        function unbindShortcuts(commands) {
+          for(var i = 0; i < commands.length; i++) {
+            if(typeof commands[i].shortcut !== 'undefined') {
+              Mousetrap.unbind(commands[i].shortcut);
+            }
+          }
         }
 
         paletteService.subscribe(function (newCommands, oldCommands) {

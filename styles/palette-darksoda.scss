@@ -79,15 +79,19 @@ input[type="text"].palette-input {
     color: darken($text-color, 15%);
     border-bottom: 1px solid darken($secondary-bg-color, 10%);
     border-top: 1px solid $main-bg-color;
-    padding: 3px 3px 10px 8px;
+    padding: 3px 8px 10px 8px;
     &:first-child {
         // border-top: none;
     }
     @include transition(background 80ms ease-out);
+
+    .shortcut {
+        float: right;
+    }
 }
 
 .palette-item.selected {
-    padding: 4px 3px 10px 8px;
+    padding: 4px 8px 10px 8px;
     color: $text-color;
     background: $active-bg;
     // font-weight: bold;

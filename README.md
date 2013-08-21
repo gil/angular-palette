@@ -108,6 +108,7 @@ and you try exporting from multiple that wont work.
         paletteService.exportCommands([
           {
             name: "Notify: Alert Message",
+            shortcut: "ctrl+k",
             cmd: function () {
               $scope.makeMessage();
             },
@@ -118,6 +119,8 @@ and you try exporting from multiple that wont work.
       }]);
 
 ***name** (string) is what you want to be displayed in the palette
+
+**shortcut** (string|array) keyboard shortcut to bind on this command, following [MouseTrap](https://github.com/ccampbell/mousetrap) convention
 
 **cmd** (function|string) takes a function you wish to call when the command is selected from the palette
 
@@ -132,8 +135,7 @@ that is passed in.
 ### Why Should I Use It?
 
 Power users love to keep their hands on the keyboard at all times. Most web apps
-fall behind their desktop counterparts in this regard. (Note: angular-palette
-does not offer global keyboard shortcuts for commands. Maybe in the future)
+fall behind their desktop counterparts in this regard.
 
 The palette works well for global actions across the application, routes and 
 links are the perfect candidate under this stance. You may also want to 
@@ -150,8 +152,6 @@ from one controller at a time (they replace each other) which is soon to be fixe
  - Export commands from more than one controller at a time.
  - Custom Scroll Area - Styled right in all browsers and better scrolling while following
 results in the palette with up/down keys.
- - Handle MouseTrap shortcut key binding in one go, and display those key combos
-in the palette like Sublime Text does.
  - Docs
 
 ### Dependencies

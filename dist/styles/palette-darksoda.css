@@ -89,35 +89,39 @@ input[type="text"].palette-input {
   color: #d9d9d9;
   border-bottom: 1px solid #1f1f1f;
   border-top: 1px solid #484848;
-  padding: 3px 3px 10px 8px;
+  padding: 3px 8px 10px 8px;
   -webkit-transition: background 80ms ease-out;
   -moz-transition: background 80ms ease-out;
   -o-transition: background 80ms ease-out;
   transition: background 80ms ease-out;
 }
+/* line 88, ../../styles/palette-darksoda.scss */
+.palette-item .shortcut {
+  float: right;
+}
 
-/* line 89, ../../styles/palette-darksoda.scss */
+/* line 93, ../../styles/palette-darksoda.scss */
 .palette-item.selected {
-  padding: 4px 3px 10px 8px;
+  padding: 4px 8px 10px 8px;
   color: white;
   background: #181818;
   border-top: none;
 }
 
-/* line 97, ../../styles/palette-darksoda.scss */
+/* line 101, ../../styles/palette-darksoda.scss */
 .palettematch {
   color: #43c5db;
   font-weight: bold;
   text-decoration: underline;
 }
 
-/* line 103, ../../styles/palette-darksoda.scss */
+/* line 107, ../../styles/palette-darksoda.scss */
 .palette-body ::-webkit-scrollbar {
   width: 13px;
   padding: 0;
 }
 
-/* line 108, ../../styles/palette-darksoda.scss */
+/* line 112, ../../styles/palette-darksoda.scss */
 .palette-body ::-webkit-scrollbar-track {
   background: #1f1f1f;
   width: 5px;
@@ -125,7 +129,7 @@ input[type="text"].palette-input {
   margin: 0;
 }
 
-/* line 117, ../../styles/palette-darksoda.scss */
+/* line 121, ../../styles/palette-darksoda.scss */
 .palette-body ::-webkit-scrollbar-thumb {
   width: 1px;
   padding: 0;

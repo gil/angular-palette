@@ -6,9 +6,10 @@
             <div class="palette-item"
                 ng-repeat="command in (filteredCommands = (commands | orderBy: 'name'| filter:query ))"
                 ng-class="{selected: $index == activeCmd}"
-                ng-bind-html-unsafe="command.name | drHighlight:query.name"
                 dr-scroll-to-contain="{{$index == activeCmd}}"
                 ng-click="useSelection(command)">
+                <span ng-bind-html-unsafe="command.name | drHighlight:query.name"></span>
+                <span class="shortcut">{{ command.shortcut.join(", ") }}</span>
             </div>
         </div>
     </div>
