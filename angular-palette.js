@@ -176,14 +176,16 @@ angular.module('palette', [])
           for(var i = 0; i < commands.length; i++) {
             if(typeof commands[i].shortcut !== 'undefined') {
               commands[i].shortcut = [].concat(commands[i].shortcut);
-              Mousetrap.bind(commands[i].shortcut, shortcutBindHandler(commands[i]));
+              Mousetrap.bindGlobal(commands[i].shortcut, shortcutBindHandler(commands[i]));
             }
           }
         }
 
         function shortcutBindHandler(command) {
           return function() {
-            $scope.useSelection(command);
+            if(!$scope.visible) {
+              $scope.useSelection(command);
+            }
           };
         }
 
